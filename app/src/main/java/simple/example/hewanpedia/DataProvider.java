@@ -1,5 +1,6 @@
 package simple.example.hewanpedia;
 
+
 import android.content.Context;
 
 import java.util.ArrayList;
@@ -7,8 +8,8 @@ import java.util.List;
 
 import simple.example.hewanpedia.model.Anjing;
 import simple.example.hewanpedia.model.Hewan;
-import simple.example.hewanpedia.model.Ikan;
 import simple.example.hewanpedia.model.Kucing;
+import simple.example.hewanpedia.model.Kupu;
 
 public class DataProvider {
     private static List<Hewan> hewans = new ArrayList<>();
@@ -47,26 +48,28 @@ public class DataProvider {
         return anjings;
     }
 
-    private static List<Ikan> intDataIkan(Context ctx) {
-        List<Ikan> ikans = new ArrayList<>();
-        ikans.add(new Ikan("Mas", "Cina",
-                "Ikan ini banyak disukai masyarakat Indoonesia, selain karena kandungan proteinnya cukup tinggi rasa daging ikan Mas juga enak dan gurih bahkan pada beberapa daerah di Indonesia, ikan Mas kerap di sajikan dengan bumbu spesial dan menjadi masakan khas.", R.drawable.ikan_mas));
-        ikans.add(new Ikan("Ikan Lele", "Afrika",
-                "Lele merupakan ikan tanpa sisik yang dapat ditemukan di perairan tawar di dua benua, yaitu di Benua Afrika dan Asia. Ikan ini memiliki nama internasional sama dengan ikan patin dan baung, yaitu catfish.", R.drawable.ikan_lele));
-        ikans.add(new Ikan("Nila", "Sungai Nil Uganda",
-                "Ikan nila melakukan migrasi secara alami dari habitat aslinya di Sungai Nil di Uganda (bagian hulu Sungai Nil) ke arah selatan melewati Danau Raft dan Tanganyika hingga ke daerah Mesir sepanjang Sungai Nil.",R.drawable.ikan_nila));
-        ikans.add(new Ikan("gurame" ,"malaysia",
-                "Gurami merupakan ikan asli Indonesia, tepatnya berasal dari perairan daerah sunda ( Jawa Barat, Indonesia ). Kemudian ikan ini menyebar ke Malaysia, Thailand, Ceylon, dan Australia. Ikan berbentuk pipih lebar ini hidup di air tawar yang tidak mengalir.",R.drawable.ikan_gurame));
-        ikans.add(new Ikan("Bawal","Hindia",
-                "Ikan Bawal banyak terdapat di Lautan Hindia selain terdapat juga di Afrika, Malaysia dan Jepang. Ikan Bawal hidup dan berenang secara bergerombol. Bawal sering juga ditemukan beriringan dengan udang di dasar laut.",R.drawable.ikan_bawal));
+    private static List<Kupu> intDataKupu(Context ctx) {
+        List<Kupu> kupus = new ArrayList<>();
+        kupus.add(new Kupu("Blue Morpho", "Amerika Selatan dan Meksiko",
+                "Blue morpho memiliki sayap yang mengkilat,dengan ukuran kisaran 8 inci. Kupu-kupu ini dapat ditemukan di daerah amerika tengah, selatan dan meksiko", R.drawable.blue_morpho));
+        kupus.add(new Kupu("Monarch Butterfly", "Amerika Utara",
+                "Perpaduan warna hitam, putih dan coklat menjadikan monarc buterfly tidak terlalu mencolok dari segi warna. Namun tetap indah, karena memiliki corak yang unik dan tidak biasa.", R.drawable.monarch_buterfly));
+        kupus.add(new Kupu("Australian Pointed Lady", "Australia dan New Zeeland",
+                "Sesuai namanya, kupu-kupu ini berasal dari Australia. Jika kalian menganggap di Australia tidak ada kupu-kupu tentu kesalahan besar, terbukti dengan adanya jenis kupu-kupu ini.", R.drawable.australian_pointed_lady));
+        kupus.add(new Kupu("Purple Spotted Swallowtail", "Papua Nugini",
+                "Seperti namanya, purple spotted swallowtail memiliki arti bagian warna ungu dan sayap seperti ekor. Warnanya memang jelas sekali terlihat indah dengan warna ungu di bagian tengah sayap.",R.drawable.purple_spotted_swallowtail));
+        kupus.add(new Kupu("Red Lacewing Buterfly" ,"Philiphina",
+                "Kupu-kupu yang berasal dari daerah philifina ini memiliki bentuk seperti kupu-kubu besar di Indonesia, dengan warna sayap bagian tengah merah bata",R.drawable.red_lacewing_buterfly));
+        kupus.add(new Kupu("Leopard Lacewing","China, Malaysia dan Singapura",
+                "Jawaban paling mendekati kebenarannya ialah disebabkan corak kupu-kupu yang menyerupai seekor leopard.",R.drawable.leopard_lacewing));
 
-        return ikans;
+        return kupus;
     }
 
     private static void initAllHewans(Context ctx) {
         hewans.addAll(initDataKucing(ctx));
         hewans.addAll(initDataAnjing(ctx));
-        hewans.addAll(intDataIkan(ctx));
+        hewans.addAll(intDataKupu(ctx));
     }
 
     public static List<Hewan> getAllHewan(Context ctx) {
